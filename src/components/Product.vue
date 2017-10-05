@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <div>
     <f7-card>
         <f7-card-content>
              <div class="list-block media-list">
@@ -19,8 +19,14 @@
             </div>
         </f7-card-content>
         <f7-card-footer>
-            <div>
-                Quant:  <b>{{quant}}</b>
+            <div class="row no-gutter" style="width: 100%">
+                <!-- Each "cell" has col-[widht in percents] class -->
+                <div class="col-50">
+                    Quant:  <b>{{quant || 0}}</b>
+                </div>
+                <div class="col-50">
+                    Preço: R$ <b>{{product.price || 0}}</b>
+                </div>
             </div>
         </f7-card-footer>
         <f7-card-footer>
@@ -31,7 +37,7 @@
         </f7-card-footer>
         
     </f7-card>
-  </span>
+  </div>
 </template>
 
 <script>
@@ -58,3 +64,12 @@
         }
     }
 </script>
+
+<style scoped>
+    .inline-block {
+        display: inline-block;
+    }
+    .float-right {
+        float: right;
+    }
+</style>
