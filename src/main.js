@@ -14,12 +14,6 @@ import Framework7Vue from 'framework7-vue'
 // /home/daniel/development/projects/hackathon-fluig/app/node_modules/framework7/dist/css/framework7.md.min.css
 import Framework7Theme from 'framework7/dist/css/framework7.material.css'
 import Framework7ThemeColors from 'framework7/dist/css/framework7.material.colors.min.css'
-// import Framework7ThemeColors from 'framework7/dist/css/framework7.md.'
-// /* OR for Material Theme:
-// import Framework7Theme from 'framework7/dist/css/framework7.md.min.css'
-// import Framework7ThemeColors from 'framework7/dist/css/framework7.md.colors.min.css'
-// */
-
 // Import App Custom Styles
 // import AppStyles from './css/app.css'
 
