@@ -1,10 +1,18 @@
-export default [  
+import about from './components/pages/About.vue'
+import checkout from './components/pages/Checkout.vue'
+import products from './components/pages/Products.vue'
+
+export default [
+    {
+      path: '/',
+      component: products
+    },
     {
       path: '/about/',
-      component: require('./components/pages/About.vue')
+      component: about
     },
     {
       path: '/checkout/',
-      component: require('./components/pages/Checkout.vue')
+      component: checkout
     }
   ]

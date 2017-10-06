@@ -6,7 +6,7 @@
                 <ul>
                     <li class="item-content">
                     <div class="item-media">
-                        <img src="http://via.placeholder.com/200x200" width="80">
+                        <img :src="product.img" width="80">
                     </div>
                     <div class="item-inner">
                         <div class="item-title-row">
@@ -30,12 +30,12 @@
             </div>
         </f7-card-footer>
         <f7-card-footer>
-           
+
             <f7-button @click="increment">+</f7-button>
             <f7-button @click="decrement">-</f7-button>
             <f7-button @click="decrement">Buy now</f7-button>
         </f7-card-footer>
-        
+
     </f7-card>
   </div>
 </template>
@@ -48,7 +48,7 @@
             }
         },
         created: function() {
-            
+
         },
         props: ["product"],
         methods: {

@@ -1,15 +1,18 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import about from './components/pages/About.vue'
+import checkout from './components/pages/Checkout.vue'
+import products from './components/pages/Products.vue'
 
-Vue.use(Router)
-
-export default new Router({
-  routes: [
+export default [
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello
+      path: '/about/',
+      component: about
+    },
+    {
+      path: '/checkout/',
+      component: checkout
+    },
+    {
+      path: '/products/',
+      component: products
     }
   ]
-})

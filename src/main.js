@@ -2,6 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 
+import VueFire from 'vuefire'
+
 // Import F7
 /* eslint-disable no-unused-vars */
 import Framework7 from 'framework7'
@@ -25,6 +27,9 @@ import App from './App'
 
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
+
+// Init VueFire Vue Plugin
+Vue.use(VueFire)
 
 /* eslint-disable no-new */
 // Init App

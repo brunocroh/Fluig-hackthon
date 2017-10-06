@@ -23,6 +23,7 @@
             <f7-list>
               <f7-list-item link="/about/" title="About" link-view="#main-view" link-close-panel></f7-list-item>
               <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
+              <f7-list-item link="//" title="Products" link-view="#main-view" link-close-panel></f7-list-item>
             </f7-list>
           </f7-page>
         </f7-pages>
@@ -69,13 +70,8 @@
         <!-- Pages -->
         <f7-pages>
           <f7-page>
-
-            <product v-for="product in products" v-bind:key="product.ean" :product="product"
-              @quantchanged="productQuantChanged"
-            >
-                
-            </product>
-
+            <f7-list link="/" title="Products"></f7-list>
+            <f7-list link="/about/" title="About"></f7-list>
           </f7-page>
         </f7-pages>
       </f7-view>
@@ -90,11 +86,11 @@ import productList from './static/products'
 
 export default {
 
-  data: () => { 
+  data: () => {
     return {
       selectedProducts: [],
       products: productList
-    } 
+    }
   },
   methods: {
     getSelectedProducts: {
@@ -110,11 +106,11 @@ export default {
       if (quant == 0) {
         this.selectedProducts = this.selectedProducts.filter((listed) => listed.ean != product.ean)
       }
-      
+
     }
   },
-  components: { 
-    product 
+  components: {
+    product
   },
   computed: {
     countCart: function() {
