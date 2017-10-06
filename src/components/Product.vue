@@ -30,39 +30,44 @@
             </div>
         </f7-card-footer>
         <f7-card-footer>
-
             <f7-button @click="increment">+</f7-button>
             <f7-button @click="decrement">-</f7-button>
-            <f7-button @click="decrement">Buy now</f7-button>
+            <paypal-button></paypal-button>
         </f7-card-footer>
 
     </f7-card>
   </div>
 </template>
 
-<script>
-    export default {
-        data: () => {
-            return {
-                quant: 0
-            }
-        },
-        created: function() {
 
-        },
-        props: ["product"],
-        methods: {
-            increment: function() {
-                this.quant++
-                this.$emit("quantchanged", this.product, this.quant)
-            },
-            decrement: function() {
-                this.quant--
-                if (this.quant < 0) this.quant = 0
-                this.$emit("quantchanged", this.product, this.quant)
-            }
-        }
+<script>
+  import PaypalButton from './PaypalButton.vue';
+
+  export default {
+      data: () => {
+          return {
+              quant: 0
+          }
+      },
+      created: function() {
+
+      },
+      props: ["product"],
+      methods: {
+          increment: function() {
+              this.quant++
+              this.$emit("quantchanged", this.product, this.quant)
+          },
+          decrement: function() {
+              this.quant--
+              if (this.quant < 0) this.quant = 0
+              this.$emit("quantchanged", this.product, this.quant)
+          }
+      },
+    components: {
+      PaypalButton
     }
+  }
 </script>
 
 <style scoped>
