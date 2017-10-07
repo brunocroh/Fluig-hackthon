@@ -37,7 +37,8 @@
             currency="BRL"
             :client="credentials"
             :dev="true"
-            invoiceNumber="201701011000">
+            invoiceNumber="201701011000"
+            >
           </PayPal>
         </f7-card-footer>
     </f7-card>
@@ -47,7 +48,7 @@
 
 <script>
 
-  import PayPal from 'vue-paypal-checkout'
+  import PayPal from './vue-paypal-checkout/src/main'
 
   export default {
       data: () => {
