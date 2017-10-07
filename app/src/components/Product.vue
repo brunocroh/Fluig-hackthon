@@ -33,10 +33,10 @@
           <f7-button @click="increment">+</f7-button>
           <f7-button @click="decrement">-</f7-button>
           <PayPal
-            :amount="product.price"
+            :amount="product.price.toString()"
             currency="BRL"
             :client="credentials"
-            dev="true"
+            :dev="true"
             invoiceNumber="201701011000">
           </PayPal>
         </f7-card-footer>
@@ -55,6 +55,8 @@
               credentials: {
                 sandbox: 'ATNsAVTCUJGkyoFKE-zqJjAEGmRV91NBCAk3dKUOkQ5HAUdSydNf9-VcNgFxiYH-LRBX1Wz5062ExFzV'
               },
+              quant: 0,
+              ammount: 0
           }
       },
       created: function() {
