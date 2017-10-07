@@ -70,6 +70,7 @@
         <!-- Pages -->
         <f7-pages>
           <f7-page>
+            <ProductsPage></ProductsPage>
             <f7-list link="/products/" title="Products"></f7-list>
             <f7-list link="/about/" title="About"></f7-list>
           </f7-page>
@@ -83,6 +84,7 @@
 <script>
 import product from './components/Product'
 import productList from './static/products'
+import ProductsPage from './components/pages/Products.vue'
 
 export default {
 
@@ -110,7 +112,8 @@ export default {
     }
   },
   components: {
-    product
+    product,
+    ProductsPage
   },
   computed: {
     countCart: function() {

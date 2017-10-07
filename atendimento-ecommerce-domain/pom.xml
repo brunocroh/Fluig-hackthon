@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>br.com.fluig.hackathon.atendimento-ecommerce</groupId>
+    <artifactId>atendimento-ecommerce-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../atendimento-ecommerce-parent</relativePath>
+  </parent>
+  <artifactId>atendimento-ecommerce-domain</artifactId>
+  	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.ws.cxf</groupId>
+			<artifactId>jbossws-cxf-transports-httpserver</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-discovery</groupId>
+			<artifactId>commons-discovery</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>br.com.pcsist.fluig.api</groupId>
+			<artifactId>workflowengine</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>br.com.fluig.conector.framework</groupId>
+			<artifactId>conector-fluig-framework</artifactId>
+		</dependency>
+	</dependencies>
+</project>
