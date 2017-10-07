@@ -9,7 +9,8 @@ var chalk = require('chalk')
 var webpack = require('webpack')
 var config = require('../config')
 var webpackConfig = require('./webpack.prod.conf')
-
+var fs = require('fs-extra')
+var cp = require('glob-copy');
 var spinner = ora('building for production...')
 spinner.start()
 
@@ -29,6 +30,12 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     if (stats.hasErrors()) {
       console.log(chalk.red('  Build failed with errors.\n'))
       process.exit(1)
+    } else {
+      let cordovaDir = '../cordova/www'
+      fs.removeSync(cordovaDir)
+      fs.ensureDirSync(cordovaDir)
+      cp.sync('../dist/*', '../cordova/www');      
+      console.log("has build the thing")
     }
 
     console.log(chalk.cyan('  Build complete.\n'))
