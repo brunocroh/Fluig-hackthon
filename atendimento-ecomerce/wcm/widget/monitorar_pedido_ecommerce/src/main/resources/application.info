@@ -1,0 +1,17 @@
+application.type=widget
+application.code=monitorar_pedido_ecommerce
+application.title=Monitorar Pedido Ecommerce
+application.description=Monitorar Pedido Ecommerce
+application.category=SYSTEM
+application.renderer=freemarker
+developer.code=N0006262
+developer.name=maraysa.nascimento
+developer.url=http://www.fluig.com
+application.uiwidget=true
+application.mobileapp=true
+view.file=view.ftl
+edit.file=edit.ftl
+locale.file.base.name=monitorar_pedido_ecommerce
+application.resource.js.1=/resources/js/monitorar_pedido_ecommerce.js
+application.resource.css.2=/resources/css/monitorar_pedido_ecommerce.css
+application.resource.component.1=fluigchart

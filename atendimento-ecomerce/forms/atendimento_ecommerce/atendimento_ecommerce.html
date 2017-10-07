@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css" />
+		<link type="text/css" rel="stylesheet" href="atendimento-ecommerce.css" />
+
+		<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+		<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+		<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+		<script type="text/javascript" src="tabela-produtos.js" charset="utf-8"></script>
+		<script type="text/javascript" src="form.js" charset="utf-8"></script>
+		<script type="text/javascript" src="main.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../vcXMLRPC.js"></script>
+		<script type="text/javascript" charset="utf-8">
+		$( document ).ready(function() {
+			FLUIGC.switcher.init("#disponivelPickup");
+			FLUIGC.switcher.init("#enviadoTransportadora");
+			FLUIGC.switcher.init("#entregaConcluida");
+		});
+		</script>
+
+		<title>Atendimento E-Commerce</title>
+	</head>
+
+	<body>
+		<div class="fluig-style-guide">
+			<form name="form">
+				<div id="camposOcultos">
+					<input type="hidden" name="email" id="email"/>
+					<input type="hidden" name="nome" id="nome"/>
+					<input type="hidden" name="entrega" id="entrega"/>
+					<input type="hidden" name="dataPedido" id="dataPedido"/>
+					<input type="hidden" name="listaProdutos" id="listaProdutos"/>
+					<input type="hidden" name="qtdeProdutosLista" id="qtdeProdutosLista" />
+					<input type="hidden" name="qtdeProdutosSelecionados" id="qtdeProdutosSelecionados" value="0"/>
+					<input class="hide" type="text" name="WKNumState" id="WKNumState">
+				</div>
+
+				<div class="panel panel-default" style="border-color: #dadada;">
+					<div class="panel-heading">Dados do Pedido</div>
+					<div class="panel-body">
+						<div class="col-md-12">
+							<ul class="list-group">
+								<li class="list-group-item" style="color: #959595;">
+									Cliente: <label id="lbNomeCliente" style="color: #959595;"></label>
+								</li>
+								<li class="list-group-item" style="color: #959595;">
+									E-mail do Cliente: <label id="lbEmailCliente" style="color: #959595;"></label>
+								</li>
+								<li class="list-group-item" style="color: #959595;">
+									Data do pedido: <label id="lbDataPedido" style="color: #959595;"></label>
+								</li>
+								<li class="list-group-item" style="color: #959595;">
+									Entregar: <label id="lbEntregar" style="color: #959595;"></label>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<label style="color: #959595; margin-left: 3px;">Conferir Produtos</label>
+				<div class="panel panel-primary" style="border-color: #dadada;">
+					<div class="panel-body">
+						<div class="col-md-12">
+							<div id="produtos"></div>
+							<script type="text/template" class="template_produtos">
+								<tr>
+								<td data-checkbox><input type="checkbox"/></td>
+								<td data-select>{{descricao}}</td>
+								<td data-select>{{qtde}}</td>
+								</tr>
+							</script> 
+						</div>
+					</div>
+				</div>
+				<div id="divPickup" style="display:none;">
+					<label style="color: #959595; margin-left: 3px;">Disponibilizar Pick up</label>
+					<div class="panel panel-primary" style="border-color: #dadada;">
+						<div class="panel-body">
+							<div class="col-md-12">
+								<input  id="disponivelPickup" name="disponivelPickup" 
+								type="checkbox" data-on-color="success" data-off-color="danger" 
+								data-on-text="Sim" data-off-text="Não"	value="yes">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="divTrasnpostadora" style="display:none;">
+					<label style="color: #959595; margin-left: 3px;">Enviado pela Transportadora</label>
+					<div class="panel panel-primary" style="border-color: #dadada;">
+						<div class="panel-body">
+							<div class="col-md-12">
+								<input  id="enviadoTransportadora" name="enviadoTransportadora" 
+								type="checkbox" data-on-color="success" data-off-color="danger" 
+								data-on-text="Sim" data-off-text="Não"	value="yes">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="divEntregaConcluida" style="display:none;">
+					<label style="color: #959595; margin-left: 3px;">Entrega concluida</label>
+					<div class="panel panel-primary" style="border-color: #dadada;">
+						<div class="panel-body">
+							<div class="col-md-12">
+								<input  id="entregaConcluida" name="entregaConcluida" 
+								type="checkbox" data-on-color="success" data-off-color="danger" 
+								data-on-text="Sim" data-off-text="Não"	value="yes">
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
