@@ -32,21 +32,21 @@
         <f7-card-footer>
             <f7-button @click="increment">+</f7-button>
             <f7-button @click="decrement">-</f7-button>
-            <paypal-button></paypal-button>
         </f7-card-footer>
-
     </f7-card>
   </div>
 </template>
 
 
 <script>
-  import PaypalButton from './PaypalButton.vue';
 
   export default {
       data: () => {
           return {
-              quant: 0
+              quant: 0,
+              credentials: {
+                sandbox: 'ATNsAVTCUJGkyoFKE-zqJjAEGmRV91NBCAk3dKUOkQ5HAUdSydNf9-VcNgFxiYH-LRBX1Wz5062ExFzV'
+              },
           }
       },
       created: function() {
@@ -65,7 +65,6 @@
           }
       },
     components: {
-      PaypalButton
     }
   }
 </script>
