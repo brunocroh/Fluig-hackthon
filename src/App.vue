@@ -23,7 +23,7 @@
             <f7-list>
               <f7-list-item link="/about/" title="About" link-view="#main-view" link-close-panel></f7-list-item>
               <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
-              <f7-list-item link="//" title="Products" link-view="#main-view" link-close-panel></f7-list-item>
+              <f7-list-item link="/products/" title="Products" link-view="#main-view" link-close-panel></f7-list-item>
             </f7-list>
           </f7-page>
         </f7-pages>
@@ -70,7 +70,7 @@
         <!-- Pages -->
         <f7-pages>
           <f7-page>
-            <f7-list link="/" title="Products"></f7-list>
+            <f7-list link="/products/" title="Products"></f7-list>
             <f7-list link="/about/" title="About"></f7-list>
           </f7-page>
         </f7-pages>

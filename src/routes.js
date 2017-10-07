@@ -4,7 +4,7 @@ import products from './components/pages/Products.vue'
 
 export default [
     {
-      path: '/',
+      path: '/products/',
       component: products
     },
     {

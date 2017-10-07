@@ -2,6 +2,7 @@
   <f7-page>
     <f7-navbar title="About" back-link="Back" sliding></f7-navbar>
     <f7-block inner>
+
             <product
               v-for="product in products"
               v-bind:key="product.ean"
@@ -15,7 +16,7 @@
 <script>
 
 import Firebase from 'firebase'
-import product from '../Product.vue'
+import Product from '../Product.vue'
 
 var config = {
   apiKey: "AIzaSyBI7pmGyIRGUPr_3Y_9FKppgGbIQk8p9Xk",
@@ -31,13 +32,13 @@ let db = app.database()
 let productsRef = db.ref('products')
 
 export default {
-
   firebase: {
     products: productsRef,
   },
   data: () => {
     return {
       selectedProducts: [],
+      products: []
     }
   },
   methods: {
@@ -58,7 +59,7 @@ export default {
     }
   },
   components: {
-    product
+    Product
   },
   computed: {
     countCart: function() {
@@ -68,6 +69,7 @@ export default {
     }
   },
   watch: {
+
   }
 }
 </script>

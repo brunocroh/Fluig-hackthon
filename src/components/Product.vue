@@ -30,39 +30,43 @@
             </div>
         </f7-card-footer>
         <f7-card-footer>
-
             <f7-button @click="increment">+</f7-button>
             <f7-button @click="decrement">-</f7-button>
-            <f7-button @click="decrement">Buy now</f7-button>
         </f7-card-footer>
-
     </f7-card>
   </div>
 </template>
 
-<script>
-    export default {
-        data: () => {
-            return {
-                quant: 0
-            }
-        },
-        created: function() {
 
-        },
-        props: ["product"],
-        methods: {
-            increment: function() {
-                this.quant++
-                this.$emit("quantchanged", this.product, this.quant)
-            },
-            decrement: function() {
-                this.quant--
-                if (this.quant < 0) this.quant = 0
-                this.$emit("quantchanged", this.product, this.quant)
-            }
-        }
+<script>
+
+  export default {
+      data: () => {
+          return {
+              quant: 0,
+              credentials: {
+                sandbox: 'ATNsAVTCUJGkyoFKE-zqJjAEGmRV91NBCAk3dKUOkQ5HAUdSydNf9-VcNgFxiYH-LRBX1Wz5062ExFzV'
+              },
+          }
+      },
+      created: function() {
+
+      },
+      props: ["product"],
+      methods: {
+          increment: function() {
+              this.quant++
+              this.$emit("quantchanged", this.product, this.quant)
+          },
+          decrement: function() {
+              this.quant--
+              if (this.quant < 0) this.quant = 0
+              this.$emit("quantchanged", this.product, this.quant)
+          }
+      },
+    components: {
     }
+  }
 </script>
 
 <style scoped>
