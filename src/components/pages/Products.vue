@@ -3,12 +3,12 @@
     <f7-navbar title="About" back-link="Back" sliding></f7-navbar>
     <f7-block inner>
 
-            <product
-              v-for="product in products"
-              v-bind:key="product.ean"
-              :product="product"
-              @quantchanged="productQuantChanged">
-            </product>
+      <product
+        v-for="product in products"
+        v-bind:key="product.ean"
+        :product="product"
+        @quantchanged="productQuantChanged">
+      </product>
     </f7-block>
   </f7-page>
 </template>
